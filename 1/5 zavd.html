@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script>
+    function factorial(n){
+      return n != 1 ? n * factorial(n-1) : 1
+    }
+
+    function fun()
+    {
+    var x, y, sum=0.0, i=2, goal = 6;
+    x = parseInt(main_form.t_x.value);
+    y = parseInt(main_form.t_y.value);
+
+    for(i; i <= goal; i++){
+      sum += Math.pow(-1, i+1) * (2*x*y - x*x) / factorial(i+1)
+    }
+    main_form.t_c.value = "" + sum;
+    }
+    </script>
+  </head>
+  <body>
+    <form id = "main_form">
+      x<input type="text" id = "t_x" value="10"><br>
+      y<input type="text" id = "t_y" value="-2"><br>
+      Результат<input type="text" id = "t_c" value=""><br>
+      <input type = "button" onClick = "fun();" value = "Розрахувати">
+    </form>
+  </body>
+</html>
