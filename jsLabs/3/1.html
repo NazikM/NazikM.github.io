@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form >
+      <label for="len"></label>
+      <input type="text" name="len" id="len">
+      <label for="width"></label>
+      <input type="text" name="width" id = "width">
+      <input type="button" id = "res" value="Submit" onclick="calculate()">
+      <p>Периметр: </p>
+      <p>Площа: </p>
+      <p>Довжина діагоналі: </p>
+    </form>
+    <script type="text/javascript">
+    function calculate(){
+      let length = document.getElementById("len").value
+      let width = document.getElementById("width").value
+      elems = document.getElementsByTagName('p')
+      elems[0].innerHTML = elems[0].innerHTML + (length*2 + width*2)
+      elems[1].innerHTML = elems[1].innerHTML + length * width
+      elems[2].innerHTML = elems[2].innerHTML + Math.sqrt(length*length + width*width)
+    }
+    </script>
+  </body>
+</html>

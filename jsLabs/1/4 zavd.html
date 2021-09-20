@@ -1,0 +1,33 @@
+<html>
+<head>
+<script>
+function fun()
+{
+  let x, y, z, d;
+  x = parseInt(main_form.t_a.value);
+  y = parseInt(main_form.t_b.value);
+  z = parseInt(main_form.t_c.value);
+  if(x*y > 0){
+    d = 3*x*y -x
+  }
+  else if(7*x > 2*y || y > 2){
+    d = 2*x - (3*y/x)
+  }
+  else{
+    d = x-y
+  }
+  t_d = document.getElementById('t_d')
+  t_d.value = "" + d;
+}
+</script>
+</head>
+<body>
+<form id = "main_form">
+x<input type="text" id = "t_a" value="10"><br>
+y<input type="text" id = "t_b" value="-2"><br>
+z<input type="text" id = "t_c" value="3"><br>
+d<input type="text" id = "t_d" value=""><br>
+<input type = "button" onClick = "fun();" value = "Розрахувати">
+</form>
+</body>
+</html>
