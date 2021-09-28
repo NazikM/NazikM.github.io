@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function calculate(){
+        document.getElementById('res').innerHTML = eval(document.getElementById('expression').value)
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="Press enter after expression" id = "expression" onchange="calculate()">
+    <div style="background-color:#d3d3d3" id="res">
+    </div>
+  </body>
+</html>
