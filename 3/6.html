@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function showhide(n)
+    {
+      if (document.getElementById('choice'+n).style.display=='inline')
+        document.getElementById('choice'+n).style.display='none';
+      else
+        document.getElementById('choice'+n).style.display='inline';
+    }
+    </script>
+
+    <a href="#" onclick="showhide(1);" style="display:block">fruits</a>
+    <div id="choice1" style="display:none">
+      <span>apple</span><br>
+      <span>pineapple</span><br>
+      <span>appricot</span><br>
+      <span>pear</span><br>
+      <span>lemon</span><br>
+    </div>
+
+    <a href="#" onclick="showhide(2);" style="display:block">vegetables</a>
+    <div id="choice2" style="display:none">
+      <span>potatoes</span><br>
+      <span>beetroot</span><br>
+      <span>carrots</span><br>
+      <span>pear</span>
+    </div>
+  </body>
+</html>

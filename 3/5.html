@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h6 id="taskNum">Task 0/10</h6>
+          <form class="" action="index.html" method="post">
+            <label for="inputAnswer" class="form-label" id="expresion"></label>
+            <div class="mx-auto" style="width: 400px;">
+              <input type="number" id="inputAnswer" class="form-control">
+            </div>
+            <button type="button" class="btn btn-outline-success" id="btnSubmit" style="width: 200px; margin-top:10px" onClick="controller()">Next</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      let userAnswers = [];
+      let trueAnswers = [];
+      let currentTaskId = 1;
+
+      function controller(){
+          let btnSubmit = document.getElementById("btnSubmit")
+          if (btnSubmit.innerHTML == "Check"){
+            checkAnswer()
+            if(currentTaskId != 10){
+              btnSubmit.innerHTML = "Next"
+            }
+            else{
+              btnSubmit.innerHTML = "Get Result"
+            }
+            currentTaskId++
+          }
+          else if(btnSubmit.innerHTML == "Next"){
+            let el = document.getElementById("inputAnswer")
+            document.getElementById('taskNum').innerHTML = 'Task ' + currentTaskId + '/10'
+            el.style.border = "1px solid #ced4da"
+            el.value = ''
+            nextQuestion()
+            btnSubmit.innerHTML = "Check"
+          }
+          else getResult()
+      }
+      function checkAnswer(){
+         let inputAnswer = document.getElementById("inputAnswer");
+         if(inputAnswer.value == trueAnswers[currentTaskId-1]){
+           userAnswers[currentTaskId-1] = true;
+           inputAnswer.style.border = "2px solid #7aeb94"
+         }
+         else{
+           userAnswers[currentTaskId-1] = false;
+           inputAnswer.style.border = "2px solid #d45d3f"
+         }
+      }
+      function nextQuestion(){
+        let num1 = getRandomInt()
+        let num2 = getRandomInt()
+        let res = num1*num2
+        document.getElementById('expresion').innerHTML = num1 + ' * ' + num2 + ' ='
+        trueAnswers.push(res)
+      }
+      function getResult(){
+        alert('Your result is ' + userAnswers.filter(x => x==true).length + '/10')
+      }
+      function getRandomInt() {
+        return Math.ceil(Math.random() * 8);
+      }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  </body>
+</html>
