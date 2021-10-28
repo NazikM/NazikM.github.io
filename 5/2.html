@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <table width="100%" border="0">
+      <tr style="background-image: url(background2.jpg)"><center>Мої одногрупники</center></tr>
+      <tr style="background-image: url(background2.jpg)">
+        <td>
+            <figure>
+              <a onclick="switchTo(1)">
+                <img src="Anya.jpg" alt="1.jpg" id="annaIMG">
+              </a>
+              <figcaption id="annaNAME">Ганна Яремій</figcaption>
+            </figure>
+        </td>
+        <td>
+          <figure>
+            <a onclick="switchTo(2)">
+              <img src="olecsa.jpg" alt="2.jpg" id="oleksaIMG">
+            </a>
+            <figcaption id="oleksaNAME">Олексій Маслов</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <a onclick="switchTo(3)">
+              <img src="oleh.jpg" alt="3.jpg" id="olehIMG">
+            </a>
+            <figcaption id="olehNAME">Олег Вітрук</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <a onclick="switchTo(4)">
+              <img src="vasil.jpg" alt="4.jpg" id="vasilIMG">
+            </a>
+            <figcaption id="vasilNAME">Василь Петрина</figcaption>
+          </figure>
+        </td>
+      </tr>
+      <tr id="maincontent"></tr>
+    </table>
+    <script>
+      function switchTo(el){
+        document.getElementById('annaIMG').style.width = el == 1 ? "340px" : "300px"
+        document.getElementById('oleksaIMG').style.width = el == 2 ? "340px" : "300px"
+        document.getElementById('olehIMG').style.width = el == 3 ? "340px" : "300px"
+        document.getElementById('vasilIMG').style.width = el == 4 ? "340px" : "300px"
+
+        document.getElementById('annaNAME').style.color = el == 1 ? "white" : "black"
+        document.getElementById('oleksaNAME').style.color = el == 2 ? "white" : "black"
+        document.getElementById('olehNAME').style.color = el == 3 ? "white" : "black"
+        document.getElementById('vasilNAME').style.color = el == 4 ? "white" : "black"
+
+        if (el == 1)
+          document.getElementById('maincontent').innerHTML = "Дужжжеее довга інфа про Аню. PS: Ні!"
+        else if (el == 2)
+          document.getElementById('maincontent').innerHTML = "Дужжжеее довга інфа про Олексія. PS: Ні!"
+        else if (el == 3)
+          document.getElementById('maincontent').innerHTML = "Дужжжеее довга інфа про Олега. PS: Ні!"
+        else
+          document.getElementById('maincontent').innerHTML = "Дужжжеее довга інфа про Василя. PS: Ні!"
+      }
+    </script>
+  </body>
+</html>
