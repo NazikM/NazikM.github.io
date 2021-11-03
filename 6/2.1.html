@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s="nazikmarusin@gmail.com";
+    let r=/^([a-z0-9]+)(\.[a-z0-9]+)*@([a-z0-9]+)(\.[a-z0-9]+)*$/i;
+    let a=s.match(r);
+
+    for (i=0;i<a.length;i++)
+    {
+        document.writeln("<hr> a["+i+"] "+a[i]);
+    }
+</script>
+
+</body>
+</html>

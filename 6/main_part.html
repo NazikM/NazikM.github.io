@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <form class="needs-validation" novalidate="">
+        <div class="row g-3">
+            <div class="col-sm-12">
+                <label for="firstName" class="form-label" id="firstName_label">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                    Valid first name is required.
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <label for="lastName" class="form-label" id="lastName_label">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                    Valid last name is required.
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="username" class="form-label" id="username_label">Username</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" id="username" placeholder="Username" required="">
+                    <div class="invalid-feedback">
+                        Your username is required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="floatingPassword" id="floatingPassword_label">Password</label>
+                <div class="input-group has-validation">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <div class="invalid-feedback">
+                        Your password is required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label for="zip" class="form-label" id="zip_label">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="" required="">
+                <div class="invalid-feedback">
+                    Zip code required.
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label" id="email_label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <div class="invalid-feedback">
+                    Please enter a valid email address for shipping updates.
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script>
+    let email = document.getElementById("email")
+    let email_label = document.getElementById("email_label")
+
+    let zip = document.getElementById("zip")
+    let zip_label = document.getElementById("zip_label")
+
+    let firstName = document.getElementById("firstName")
+    let firstName_label = document.getElementById("firstName_label")
+
+    let lastName = document.getElementById("lastName")
+    let lastName_label = document.getElementById("lastName_label")
+
+    let username = document.getElementById("username")
+    let username_label = document.getElementById("username_label")
+
+    let floatingPassword = document.getElementById("floatingPassword")
+    let floatingPassword_label = document.getElementById("floatingPassword_label")
+
+    floatingPassword.onblur = function() {
+        const regex = new RegExp('^(?=.*\\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{8,}$', 'g');
+        if (floatingPassword.value.match(regex)) {
+            floatingPassword.style.border = ""
+            floatingPassword_label.innerHTML = "Password ✔"
+        } else {
+            floatingPassword_label.innerHTML = "Password"
+            floatingPassword.style.border = "double red"
+        }
+    }
+
+    username.onblur = function() {
+        const regex = new RegExp('^[A-Za-z]+$', 'g');
+        if (username.value.match(regex)) {
+            username.style.border = ""
+            username_label.innerHTML = "Username ✔"
+        } else {
+            username_label.innerHTML = "Username"
+            username.style.border = "double red"
+        }
+    }
+    email.onblur = function(){
+        const regex = new RegExp('\\w+@\\w+\\.\\w+', 'g');
+        if (email.value.match(regex)){
+            email.style.border = ""
+            email_label.innerHTML = "Email ✔"
+        }
+        else {
+            email_label.innerHTML = "Email"
+            email.style.border = "double red"
+        }
+    }
+    zip.onblur = function(){
+        const regex = new RegExp('^\\d{5}$', 'g');
+        if (zip.value.match(regex)){
+            zip.style.border = ""
+            zip_label.innerHTML = "Zip ✔"
+        }
+        else {
+            zip_label.innerHTML = "Zip"
+            zip.style.border = "double red"
+        }
+    }
+    firstName.onblur = function(){
+        const regex = /^[A-ZА-Я|ІЇ][a-zа-я|ії]+$/
+        if (firstName.value.match(regex)){
+            firstName.style.border = ""
+            firstName_label.innerHTML = "First name ✔"
+        }
+        else {
+            firstName_label.innerHTML = "First name"
+            firstName.style.border = "double red"
+        }
+    }
+
+    lastName.onblur = function(){
+        const regex = /^[A-ZА-Я|ІЇ][a-zа-я|ії]+$/
+        if (lastName.value.match(regex)){
+            lastName.style.border = ""
+            lastName_label.innerHTML = "Last name ✔"
+        }
+        else {
+            lastName_label.innerHTML = "Last name"
+            lastName.style.border = "double red"
+        }
+    }
+
+</script>
+</body>
+</html>
