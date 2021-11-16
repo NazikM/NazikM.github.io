@@ -2,27 +2,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <Script>
         $(Document).ready(function() {
-            $( "#text" ).bind({
+            $("#btn-1").bind({
                 click: function() {
-                    $( "#text" ).addClass("custom_div")
-                },
-                dblclick: function() {
-                    $( "#text" ).removeClass("custom_div")
+                    alert("Одинарний клік")
                 }
-            })
+            });
+            $("#btn-2").bind({
+                dblclick: function() {
+                    alert("Подвійний  клік")
+                }
+            });
         });
     </Script>
-    <style>
-        .custom_div{
-            background-color: wheat;
-            border: 1px solid red;
-        }
-    </style>
 </head>
 <body>
-<H1> Контент сторінки </h1>
-<div id = "text" style="height: 250px; padding-top: 200px">
-    <center>Press me!</center>
-</div>
+<button id="btn-1">Press me 1</button>
+<button id="btn-2">Press me 2</button>
 </body>
 </html>
