@@ -1,0 +1,28 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <Script>
+        $(Document).ready(function() {
+            $( "#text" ).bind({
+                click: function() {
+                    $( "#text" ).addClass("custom_div")
+                },
+                dblclick: function() {
+                    $( "#text" ).removeClass("custom_div")
+                }
+            })
+        });
+    </Script>
+    <style>
+        .custom_div{
+            background-color: wheat;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<H1> Контент сторінки </h1>
+<div id = "text" style="height: 250px; padding-top: 200px">
+    <center>Press me!</center>
+</div>
+</body>
+</html>

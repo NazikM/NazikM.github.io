@@ -1,0 +1,30 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <Script>
+        $(Document).ready(function() {
+            $("#text").hover(
+                function() {
+                    $("#text").addClass("text_bg")
+                },
+                function() {
+                    $("#text").removeClass("text_bg")
+                }
+            )
+        });
+    </Script>
+    <style>
+        .text_bg{
+            background-color: #8b569c;
+        }
+    </style>
+</head>
+<body>
+<H1> Контент сторінки </h1>
+<A href = "#" class = "button"> Натисніть, щоб показати текст </a>
+<div id = "text">
+    <p></p>
+    <p>Серединка</p>
+    <p></p>
+</div>
+</body>
+</html>
