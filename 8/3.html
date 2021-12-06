@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"> </script>
+</head>
+<body>
+<style>
+    .some-div{
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+        border: 2px solid blue;
+    }
+    .blue {
+        background: blue;
+    }
+    .red {
+        background: red;
+    }
+</style>
+    <div id="some_div" align="center">
+        <p id="text1">Some text</p>
+        <ul style="list-style-type: none;">
+            <li>text 1</li>
+            <li id="text2">text 2</li>
+            <li>text 3</li>
+        </ul>
+        <input style="margin: 10px;" type="button" id="some_btn" value="Make text bold!">
+        <input style="margin: 10px;" type="button" id="some_btn2" value="Blue color after text 2">
+
+        <ul style="list-style-type: none;">
+            <li class="stop">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li class="start">5</li>
+        </ul>
+        <input style="margin: 10px;" type="button" id="some_btn3" value="2-4 make red with .prevUntil()">
+        <div >
+            <div class="some-div"></div>
+            <div class="some-div"></div>
+            <div class="some-div"></div>
+        </div>
+        <br>
+        <input style="margin: 10px;" type="button" id="some_btn4" value="Make 2 div blue">
+        <input style="margin: 10px;" type="button" id="some_btn5" value="Make 1, 3 div red">
+    </div>
+    <script>
+        $("#some_btn").click(function() {
+            $("#some_div").contents().filter("p#text1").wrap("<b/>");
+        })
+        $("#some_btn2").click(function() {
+            $("#text2").next().css({"color": "blue"});
+        })
+        $("#some_btn3").click(function() {
+            $("li.start").prevUntil("li.stop").css({"color": "blue"});
+        })
+        $("#some_btn4").click(function() {
+            $("body").find("div.some-div").eq(1).addClass("blue");
+        })
+        $("#some_btn5").click(function() {
+            $("div.some-div").not(":nth-child(2n)").addClass("red")
+        })
+    </script>
+</body>
+</html>

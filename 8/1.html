@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8 lab</title>
+    <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"> </script>
+</head>
+<body>
+<div  id="some_text" align="center"><h5 align="center">Some text</h5></div>
+<h5 id="some_text2" align="center">Some text 2</h5>
+<div align="center">
+    <input id="some_input" type="text" placeholder="some text...">
+    <button id="some_btn">Send data</button>
+    <br>
+    <button id="some_id" style="margin: 5px">Get attr: id</button>
+    <br>
+    <input type="button"  id="some_btn2" value="Set attr: value">
+    <input type="button"  id="some_btn3" value="attr with func()">
+    <div style="color:red" id="some_div">Last text</div>
+</div>
+<script>
+    $( "#some_text" ).click(function() {
+        let htmlString = $( this ).html();
+        console.log(htmlString)
+        $( this ).text(htmlString);
+    });
+    $( "#some_text2" ).click(function() {
+        $(this).css('color', 'red');
+        $( this ).text( "Червоний текст" );
+    });
+    $( "#some_btn" ).click(function() {
+
+        if($("#some_input").val())alert("Something");
+        else{alert("Nothing")}
+    });
+    $( "#some_id" ).click(function() {
+        alert($(this).attr('id'));
+    });
+    $( "#some_btn2" ).click(function() {
+        $(this).attr('value', $(this).attr('value') + '!');
+    });
+    $( "#some_btn3" ).click(function() {
+        $(this).attr('value', function() {
+            return "some-text"});
+    });
+    $( "#some_div" ).click(function() {
+        $(this).removeAttr('style');
+    });
+
+
+</script>
+</body>
+</html>

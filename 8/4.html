@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"> </script>
+</head>
+<body>
+<style>
+    .modify{
+        color: #88B04B;
+    }
+</style>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+<button id="btn">Button</button>
+<script>
+    $(document).ready(function () {
+        $('#btn').click(function () {
+            let els = $('li').filter(":nth-child(3n)")
+            for(let i = 0; i < els.length; i++){
+                els[i].className = "modify"
+            }
+            els = $('li').filter('.modify')
+            for(let i = 0; i < els.length; i++){
+                els[i].innerHTML += " modify"
+            }
+        })
+    })
+</script>
+</body>
+</html>

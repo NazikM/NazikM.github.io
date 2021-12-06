@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"> </script>
+</head>
+<body>
+    <div align="center">
+        <span id="hello_world">world!</span>
+        <br>
+        <input type="button" align="center" id="some_btn" value="Remove all Hello">
+        <br>
+        <div style="margin: 10px;width:100px; height:100px;background-color:red" id="red_box"></div>
+        <input type="button" align="center" id="some_btn2" value="Change red box size">
+        <br>
+        <input style="margin: 10px;"type="button" align="center" id="some_btn3" value="Show box width">
+    </div>
+    <script>
+        $( "#hello_world" ).click(function() {
+            $(this).before( "<span class='basic_span'>Hello <span>" );
+        });
+        $("#some_btn").click(function() {
+            $("span").remove(":contains('Hello')");
+        });
+        $("#some_btn2").click(function() {
+            $("#red_box").height(function(){
+                return $("#red_box").height() - 10;
+            });
+        });
+        $( "#some_btn3" ).click(function() {
+            alert($(this).outerWidth());
+        });
+    </script>
+</body>
+</html>

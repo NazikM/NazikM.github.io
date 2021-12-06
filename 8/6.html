@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div style="background:#98bf21;height:100px;width:100px;position:absolute; margin-top: 50px"></div>
+<button>Start Animation</button>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("div").animate({
+                left: '250px',
+                opacity: '0.5',
+                height: '150px',
+                width: '150px'
+            }, {
+                duration: 2000,
+                easing: "linear",
+                complete: function (){
+                    $( this ).css("background-color", "blue");
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

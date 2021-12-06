@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div style="background:#98bf21;height:100px;width:100px;position:absolute; margin-top: 50px"></div>
+<button id="hide">hide</button>
+<button id="show">show</button>
+<button id="toggle">toggle</button>
+<script>
+    $( "#hide" ).click(function(){
+        $( "div" ).hide(800,"swing");
+    });
+    $( "#show" ).click(function(){
+        $( "div" ).show( 800, "linear");
+    });
+    $( "#toggle" ).click(function(){
+        $( "div" ).toggle( 10, "linear");
+    });
+</script>
+</body>
+</html>
